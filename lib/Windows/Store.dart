@@ -232,6 +232,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   Widget build(BuildContext context) {
     return CarouselSlider(
         items: [
+          // Container(color: Colors.green,height: 200,width: 500.0,),
+
           CarousalCard(model: appProjects[0]),
           CarousalCard(model: appProjects[1]),
           CarousalCard(model: webProjects[0]),
@@ -253,6 +255,7 @@ class CarousalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
     return InkWell(
       onTap: () {
         stateofMainStore.setState(() {
@@ -286,19 +289,17 @@ class CarousalCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(model.title,
-                        maxLines: 2,
-                        style: TextStyle(color: Colors.white, fontSize: 25.0)),
-                    Text(model.category,
-                        maxLines: 1,
-                        style: TextStyle(color: Colors.grey, fontSize: 15.0)),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(model.title,
+                      maxLines: 2,
+                      style: TextStyle(color: Colors.white, fontSize: 25.0)),
+                  Text(model.category,
+                      maxLines: 1,
+                      style: TextStyle(color: Colors.grey, fontSize: 15.0)),
+                ],
               ),
             ),
           ],
